@@ -22,10 +22,13 @@ public class EditDistance {
         for(int i=m-1; i>=0; i--){
             for(int j=n-1; j>=0; j--){
                 if(s1.charAt(i)==s2.charAt(j)){
-                    dp[i][j] = dp[i+1][j+1];
+                    dp[i][j] = dp[i+1][j+1];    //no oprn needed is current characters are same
                     continue;
                 }
-                dp[i][j] = Math.min(dp[i][j+1], Math.min(dp[i+1][j], dp[i+1][j+1]))+1;
+                dp[i][j] = Math.min(dp[i][j+1], //insert into s1
+                        Math.min(dp[i+1][j],   //delete from s1
+                                dp[i+1][j+1]))  //replace curr character in s1
+                        +1;
 
             }
         }
