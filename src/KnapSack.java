@@ -29,6 +29,7 @@ public class KnapSack {
         //complexity of this solution O(nW)
         for(int i=n-1; i>=0; i--){
             for(int k=1; k<=W; k++){
+                //check if weight of current item is more than capacity of knapsack
                 if(weights[i] > k){
                     dp[i][k] = dp[i+1][k];
                     continue;
