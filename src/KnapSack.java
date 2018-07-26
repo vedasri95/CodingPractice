@@ -26,6 +26,7 @@ public class KnapSack {
             dp[i][0] = 0;
         }
 
+        //complexity of this solution O(nW)
         for(int i=n-1; i>=0; i--){
             for(int k=1; k<=W; k++){
                 if(weights[i] > k){
