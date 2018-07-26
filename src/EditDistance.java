@@ -15,7 +15,7 @@ public class EditDistance {
         for(int i=0; i<m; i++)
             dp[i][n] = i;       //i insert oprns to s1
         for(int j=0; j<n; j++)
-            dp[m][j] = j;   //j delete oprns to s2
+            dp[m][j] = j;   //j delete oprns to s1
 
         //Goal is dp[0][0]
 
