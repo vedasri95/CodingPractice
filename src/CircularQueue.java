@@ -69,7 +69,7 @@ public class CircularQueue<T> //<T> indicates that the class is of Generic type
         circularQueue.offer(3);
         //System.out.println(circularQueue.poll());
         circularQueue.offer(4);
-        circularQueue.offer(5);
+        circularQueue.offer(6);
         System.out.print(circularQueue.isFull());
         try {
             circularQueue.offer(6);
