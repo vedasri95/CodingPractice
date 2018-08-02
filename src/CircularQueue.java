@@ -1,4 +1,5 @@
-public class CircularQueue<T> {
+public class CircularQueue<T> //<T> indicates that the class is of Generic type
+{
 
     private int size;
     //front denotes the element inserted first. Useful in poll() operation
@@ -12,10 +13,10 @@ public class CircularQueue<T> {
         data = (T[] ) new Object[size];
     }
 
-    public void offer(T t){
+    public void offer(T t) throws IllegalArgumentException{
         //check if queue is full
         if(isFull())
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Queue is already full");
         //check if the queue is currently empty
         else if(isEmpty()){
             data[0] = t;
@@ -62,15 +63,22 @@ public class CircularQueue<T> {
     }
     public static void main(String[] args) {
 
-        CircularQueue<Integer> circularQueue = new CircularQueue<Integer>(5);
+        CircularQueue<Integer> circularQueue = new CircularQueue<Integer>(5); //Giving the type as Integer
         circularQueue.offer(1);
         circularQueue.offer(2);
         circularQueue.offer(3);
-        System.out.println(circularQueue.poll());
+        //System.out.println(circularQueue.poll());
         circularQueue.offer(4);
         circularQueue.offer(5);
         System.out.print(circularQueue.isFull());
-        circularQueue.offer(6);
+        try {
+            circularQueue.offer(6);
+       }
+        catch (IllegalArgumentException e){
+           System.out.println("Inside catch block");
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
         System.out.print(circularQueue.isFull());
 
         while(!circularQueue.isEmpty()){

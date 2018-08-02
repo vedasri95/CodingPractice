@@ -3,6 +3,7 @@ import java.util.Stack;
 
 public class ReverseStackRecursive {
     //Time complexity: O(n^2)
+    //Could reverse the stack in O(n) using linkedlist reversal logic
 
     private void reverse(Stack<Integer> stack){
         if(!stack.isEmpty()){

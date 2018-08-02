@@ -18,7 +18,7 @@ public class MaxLengthPairChain {
         public int compare(int[] a, int[] b){
             Integer n1 = (Integer) a[0];
             Integer n2 = (Integer) b[0];
-            return n1.compareTo(n2);
+            return n1.compareTo(n2); //natural order needed. So use compareTo method
         }
     }
 
