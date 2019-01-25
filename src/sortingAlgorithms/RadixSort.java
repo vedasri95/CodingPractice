@@ -1,3 +1,5 @@
+package sortingAlgorithms;
+
 import java.util.Scanner;
 
 public class RadixSort {
